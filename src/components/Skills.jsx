@@ -25,7 +25,6 @@ const skills = [
   },
 ];
 
-// Proficiency Data for Progress Bars
 const proficiency = [
   { name: "React.js", level: 90 },
   { name: "Node.js", level: 85 },
@@ -98,6 +97,7 @@ const Skills = () => {
                   <span className="text-slate-300 font-medium">
                     {skill.name}
                   </span>
+
                   <span className="text-brand font-bold">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-slate-800 rounded-full h-3 overflow-hidden">

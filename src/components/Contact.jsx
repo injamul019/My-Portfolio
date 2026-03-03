@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import Button from "./Button";
@@ -17,7 +17,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Add your form handling logic here
   };
 
   return (
@@ -62,12 +61,12 @@ const Contact = () => {
                 />
                 <div>
                   <p className="text-sm text-slate-400">Email</p>
-                  <p className="text-white">riajul@example.com</p>
+                  <p className="text-white">hasanriajul112@gmail.com</p>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/riajul-hasan112/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-4 p-4 bg-bg-card border border-border rounded-lg hover:border-brand transition-colors group"
@@ -83,7 +82,7 @@ const Contact = () => {
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/Riajul-56"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-4 p-4 bg-bg-card border border-border rounded-lg hover:border-brand transition-colors group"
@@ -94,7 +93,7 @@ const Contact = () => {
                 />
                 <div>
                   <p className="text-sm text-slate-400">GitHub</p>
-                  <p className="text-white">riajulhasan</p>
+                  <p className="text-white">Riajul Hasan</p>
                 </div>
               </a>
             </div>

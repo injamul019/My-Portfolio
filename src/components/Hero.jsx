@@ -170,7 +170,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <div className="relative w-72 h-72 md:w-96 md:h-96 lg:mt-0 mt-10">
               {/* Animated Rotating Border - Outer */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -196,7 +196,7 @@ const Hero = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute inset-0 bg-brand/10 rounded-full blur-3xl"
+                className="absolute inset-0 bg-brand/10 rounded-full blur-3xl "
               ></motion.div>
 
               {/* Image Container */}
@@ -209,7 +209,7 @@ const Hero = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-brand/50 shadow-2xl shadow-brand/30 bg-bg-card"
+                className="relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-brand/50 shadow-2xl shadow-brand/30 bg-bg-card "
               >
                 <img
                   src="DP.png"
@@ -218,12 +218,12 @@ const Hero = () => {
                 />
               </motion.div>
 
-              {/* Overlay Elements - Top Left */}
+              {/* Overlay Elements - Top Left (Hidden on Mobile) */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
-                className="absolute top-4 left-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
+                className="hidden md:block absolute top-4 left-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
                   <Code2 className="text-brand" size={20} />
@@ -233,12 +233,12 @@ const Hero = () => {
                 </div>
               </motion.div>
 
-              {/* Overlay Elements - Top Right */}
+              {/* Overlay Elements - Top Right (Hidden on Mobile) */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
-                className="absolute top-4 right-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
+                className="hidden md:block absolute top-4 right-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -248,12 +248,12 @@ const Hero = () => {
                 </div>
               </motion.div>
 
-              {/* Overlay Elements - Bottom Left */}
+              {/* Overlay Elements - Bottom Left (Hidden on Mobile) */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7 }}
-                className="absolute bottom-4 left-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
+                className="hidden md:block absolute bottom-4 left-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
                   <Database className="text-brand" size={20} />
@@ -263,12 +263,12 @@ const Hero = () => {
                 </div>
               </motion.div>
 
-              {/* Overlay Elements - Bottom Right */}
+              {/* Overlay Elements - Bottom Right (Hidden on Mobile) */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute bottom-4 right-4 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
+                className="hidden md:block absolute bottom-4 right-0 z-20 bg-bg-card border border-border rounded-xl p-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
                   <Server className="text-brand" size={20} />

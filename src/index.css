@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color Palette - No Gradients */
   --color-brand: #3b82f6;
   --color-brand-hover: #2563eb;
   
