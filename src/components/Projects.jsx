@@ -7,39 +7,36 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-featured online store with cart, payment integration, and admin dashboard.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "https://via.placeholder.com/600x400/1e293b/3b82f6?text=E-Commerce",
-    demo: "#",
-    github: "#",
+    tech: ["React", "Node.js", "MongoDB"],
+    image: "Ecommerce.png",
+    demo: "https://exclusive-smoky.vercel.app/",
+    github: "https://github.com/Riajul-56/Exclusive",
   },
   {
-    title: "Task Management App",
+    title: "School Music Platform",
     description:
-      "Collaborative task management tool with real-time updates and team features.",
-    tech: ["React", "Express", "MongoDB", "Socket.io"],
-    image:
-      "https://via.placeholder.com/600x400/1e293b/3b82f6?text=Task+Manager",
-    demo: "#",
-    github: "#",
+      "A modern, interactive music school website built with Next.js 14, TypeScript, and stunning UI components from Aceternity UI.",
+    tech: ["Next.JS", "TypeScript"],
+    image: "Music.png",
+    demo: "https://school-music-three.vercel.app/",
+    github: "https://github.com/Riajul-56/school_music",
   },
   {
-    title: "Portfolio Website",
-    description:
-      "Modern, responsive portfolio website with smooth animations and dark mode.",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "https://via.placeholder.com/600x400/1e293b/3b82f6?text=Portfolio",
-    demo: "#",
-    github: "#",
+    title: "Kids School Platform",
+    description: "Modern, responsive website with smooth animations",
+    tech: ["SCSS", "HTML", "Framer Motion", "Bootstrap"],
+    image: "kids.png",
+    demo: "https://kids-school-neon.vercel.app/",
+    github: "https://github.com/Riajul-56/Kids_Schoolv",
   },
   {
-    title: "Blog Platform",
+    title: "Best NFTs Marketplace.",
     description:
-      "Content management system for creating and publishing blog posts.",
-    tech: ["React", "Node.js", "MongoDB", "Markdown"],
-    image:
-      "https://via.placeholder.com/600x400/1e293b/3b82f6?text=Blog+Platform",
-    demo: "#",
-    github: "#",
+      "It is fully responsive single-page application (SPA) using React.js, Tailwind CSS, JavaScript, and HTML. This project is designed to be sleek, modern, and highly optimized for performance.",
+    tech: ["React", "Tailwind CSS"],
+    image: "next.png",
+    demo: "https://nextgen-gules.vercel.app/",
+    github: "https://github.com/Riajul-56/NextGen",
   },
 ];
 
