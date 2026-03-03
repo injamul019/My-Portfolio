@@ -5,41 +5,38 @@ import { Award, ExternalLink, Calendar } from "lucide-react";
 const certificates = [
   {
     id: 1,
-    title: "Full Stack Web Development",
-    issuer: "Meta / Coursera",
-    date: "2023",
+    title: " Frontend Development With React ",
+    issuer: "Creative IT Institute",
+    date: "01 September, 2024",
     description:
-      "Comprehensive certification covering React, Node.js, and MongoDB.",
-    link: "#",
-    image: "https://via.placeholder.com/150/3b82f6/ffffff?text=Meta",
+      "Comprehensive certification covering React, Next.js, and Tailwind.",
+    link: "https://certificate.citsmp.com/?certificate_id=EREACT-23090419",
   },
   {
     id: 2,
-    title: "MERN Stack Masterclass",
-    issuer: "Udemy",
-    date: "2023",
-    description: "Advanced project-based learning for MERN stack development.",
-    link: "#",
-    image: "https://via.placeholder.com/150/3b82f6/ffffff?text=Udemy",
+    title: "Machine Learning with Python",
+    issuer: "Coursera",
+    date: "25 March, 2025",
+    description:
+      "Explain key concepts, tools, and roles involved in machine learning, including supervised and unsupervised learning techniques.",
+    link: "https://www.coursera.org/account/accomplishments/verify/JECM77SVBAP2",
   },
   {
     id: 3,
-    title: "Computer Science Fundamentals",
-    issuer: "Metropolitan University",
-    date: "2022",
-    description:
-      "Academic certification for core CS principles and algorithms.",
-    link: "#",
-    image: "https://via.placeholder.com/150/3b82f6/ffffff?text=MU",
+    title: "Data Science Math Skills",
+    issuer: "Coursera",
+    date: "17 March, 2025",
+    description: "Data Science Math Skills.",
+    link: "https://www.coursera.org/account/accomplishments/verify/5MM0QIEOWKMD",
   },
   {
     id: 4,
-    title: "Cloud Computing Basics",
-    issuer: "AWS",
-    date: "2024",
-    description: "Introduction to cloud services and deployment strategies.",
-    link: "#",
-    image: "https://via.placeholder.com/150/3b82f6/ffffff?text=AWS",
+    title: "Introduction to Neural Networks and PyTorch",
+    issuer: "Coursera",
+    date: "17 March, 2025",
+    description:
+      "Job-ready PyTorch skills employers need in just 6 weeks.Key concepts of logistic regression and how to apply them to classification problems",
+    link: "https://www.coursera.org/account/accomplishments/verify/X3AKJAC71MP8",
   },
 ];
 
