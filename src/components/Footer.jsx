@@ -1,113 +1,54 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Terminal, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Terminal } from "lucide-react";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Certificates", href: "#certificates" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 border-b ${
-        scrolled
-          ? "bg-bg-dark/90 backdrop-blur-md border-border"
-          : "bg-transparent border-transparent"
-      }`}
-    >
+    <footer className="py-8 bg-bg-dark border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 font-bold text-xl tracking-tighter flex items-center gap-2">
-            <Terminal className="text-brand" size={24} />
-            <a href="/" className="cursor-pointer">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <Terminal className="text-brand" size={20} />
+            <span className="font-bold text-white">
               RIAJUL<span className="text-brand">.DEV</span>
+            </span>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-6">
+            <a
+              href="https://github.com/Riajul-56"
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-400 hover:text-brand transition-colors"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/riajul-hasan112/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-slate-400 hover:text-brand transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="mailto:hasanriajul112@gmail.com"
+              className="text-slate-400 hover:text-brand transition-colors"
+            >
+              <Mail size={20} />
             </a>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="hover:text-brand transition-colors duration-200 text-[16px] font-medium text-slate-300"
-                >
-                  {link.name}
-                </a>
-              ))}
-
-              {/* Download CV Button */}
-              <a
-                href="https://drive.google.com/file/d/1stb8-F_VbsRChShp5VwD9Uw4xE0Hcc-b/view?usp=drive_link"
-                className="inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-              >
-                <Download size={16} />
-                Download CV
-              </a>
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white p-2"
-            >
-              {isOpen ? <X /> : <Menu />}
-            </button>
-          </div>
+          {/* Copyright */}
+          <p className="text-text-muted text-sm">
+            © {currentYear} Riajul Hasan. All rights reserved.
+          </p>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-bg-card border-b border-border"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 rounded-md text-base font-medium hover:bg-slate-800 hover:text-brand transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-
-              {/* Download CV Button - Mobile */}
-              <a
-                href="https://drive.google.com/file/d/1stb8-F_VbsRChShp5VwD9Uw4xE0Hcc-b/view?usp=drive_link"
-                className="block w-full mt-4 inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-hover text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
-              >
-                <Download size={16} />
-                Download CV
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+    </footer>
   );
 };
 
-export default Navbar;
+export default Footer;

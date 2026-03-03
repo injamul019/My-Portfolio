@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Code2, Database, Server, Globe } from "lucide-react";
 

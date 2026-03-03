@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { University, Briefcase, GraduationCap, Award } from "lucide-react";
 
@@ -43,6 +42,7 @@ const About = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          
           {/* Left Side - About Text & Quick Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
