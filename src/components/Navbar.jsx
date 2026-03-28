@@ -21,7 +21,6 @@ const Navbar = () => {
             href="/"
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <Terminal className="text-[#3b4b87] group-hover:text-[#6c7af2] transition-colors duration-300" size={24} />
             <span className="font-bold text-xl tracking-tight text-white group-hover:text-[#6c7af2] transition-colors duration-300">
               Injamul<span className="text-[#3b4b87]">.019</span>
             </span>
