@@ -11,14 +11,14 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <Terminal className="text-brand" size={20} />
             <span className="font-bold text-white">
-              RIAJUL<span className="text-brand">.DEV</span>
+              Injamul<span className="text-brand">.019</span>
             </span>
           </div>
 
           {/* Social Links */}
           <div className="flex gap-6">
             <a
-              href="https://github.com/Riajul-56"
+              href="https://github.com/injamul019"
               target="_blank"
               rel="noreferrer"
               className="text-slate-400 hover:text-brand transition-colors"
@@ -26,7 +26,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/riajul-hasan112/"
+              href="https://www.linkedin.com/in/mohammad-injamul-haque-956924266/"
               target="_blank"
               rel="noreferrer"
               className="text-slate-400 hover:text-brand transition-colors"
@@ -34,7 +34,7 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:hasanriajul112@gmail.com"
+              href="mailto:injamul.sylhet@gmail.com"
               className="text-slate-400 hover:text-brand transition-colors"
             >
               <Mail size={20} />
@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-text-muted text-sm">
-            © {currentYear} Riajul Hasan. All rights reserved.
+            © {currentYear} Injamul Haque. All rights reserved.
           </p>
         </div>
       </div>

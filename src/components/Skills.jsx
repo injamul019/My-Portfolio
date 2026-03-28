@@ -1,74 +1,125 @@
 import { motion } from "framer-motion";
-import { Code2, Database, Server, Globe } from "lucide-react";
+import { Code2, Database, Server, Globe, Award } from "lucide-react";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const skills = [
   {
     name: "Frontend",
-    icon: <Code2 className="text-brand" size={24} />,
-    items: ["React", "Tailwind CSS", "JavaScript", "HTML/CSS", "Redux"],
+    icon: <Code2 size={28} />,
+    items: ["React", "JavaScript", "Tailwind CSS", "HTML/CSS"],
   },
   {
     name: "Backend",
-    icon: <Server className="text-brand" size={24} />,
-    items: ["Node.js", "Express", "REST APIs", "Authentication", "JWT"],
+    icon: <Server size={28} />,
+    items: ["Node.js", "Express"],
   },
   {
     name: "Database",
-    icon: <Database className="text-brand" size={24} />,
-    items: ["MongoDB", "Mongoose", "SQL", "Sequelize", "Data Modeling"],
+    icon: <Database size={28} />,
+    items: ["MySQL","PHP"],
   },
   {
     name: "Tools",
-    icon: <Globe className="text-brand" size={24} />,
-    items: ["Git", "GitHub", "Vercel", "Postman", "VS Code"],
+    icon: <Globe size={28} />,
+    items: ["Git", "GitHub", "VS Code", "CodeBlocks", "NetBeans"],
+  },
+  {
+    name: "Competitive Programming",
+    icon: <Award size={28} />,
+    items: ["C++", "Data Structures", "Algorithms", "Problem Solving"],
+  },
+  {
+    name: "Soft Skills",
+    icon: <Globe size={28} />,
+    items: ["MS Word", "PowerPoint", "Photoshop","Communication in Groups"],
   },
 ];
 
 const proficiency = [
-  { name: "React.js", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "MongoDB", level: 80 },
-  { name: "Tailwind CSS", level: 95 },
+  { name: "React.js", level: 70 },
+  { name: "Node.js", level: 50 },
+  { name: "Tailwind CSS", level: 70 },
+  { name: "C/C++", level: 70 },
+  { name: "HTML", level: 90 },
+  { name: "Word, Power-point", level: 90 },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-bg-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-28 relative overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#3b4b87]/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#3b4b87]/20 blur-3xl rounded-full animate-pulse"></div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+
+        {/* Section Title */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Technical Skills
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Technical{" "}
+            <span className="bg-gradient-to-r from-[#3b4b87] to-indigo-400 bg-clip-text text-transparent">
+              Skills
+            </span>
           </h2>
-          <div className="w-20 h-1 bg-brand mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#3b4b87] to-indigo-400 mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {skills.map((skill, index) => (
+        {/* Skill Category Cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+        >
+          {skills.map((skill) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-bg-card border border-border rounded-xl p-6 hover:border-brand transition-all duration-300 hover:shadow-lg hover:shadow-brand/10 group"
+              variants={fadeUp}
+              whileHover={{ y: -10 }}
+              className="relative p-8 bg-[#1b1f33]/60 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl hover:shadow-[#3b4b87]/30 transition-all duration-300 group overflow-hidden"
             >
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#3b4b87]/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+              {/* Icon */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="mb-6 text-[#3b4b87]"
+              >
                 {skill.icon}
-              </div>
+              </motion.div>
+
               <h3 className="text-xl font-semibold text-white mb-4">
                 {skill.name}
               </h3>
+
               <div className="flex flex-wrap gap-2">
                 {skill.items.map((item) => (
                   <span
                     key={item}
-                    className="px-3 py-1 bg-slate-800 text-slate-300 text-sm rounded-full border border-slate-700 group-hover:bg-brand/10 group-hover:text-brand transition-colors"
+                    className="px-3 py-1 bg-[#2c2f44]/70 text-slate-300 text-sm rounded-full border border-[#3b3e5a] hover:bg-[#3b4b87]/20 hover:text-[#3b4b87] transition-all duration-300"
                   >
                     {item}
                   </span>
@@ -76,42 +127,48 @@ const Skills = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Proficiency Progress Bars */}
+        {/* Proficiency Section */}
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-semibold text-white mb-8 text-center">
-            Proficiency Levels
+          <h3 className="text-3xl font-bold text-white mb-12 text-center">
+            Skill Proficiency
           </h3>
-          <div className="space-y-6">
-            {proficiency.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            {proficiency.map((skill) => (
+              <motion.div key={skill.name} variants={fadeUp}>
                 <div className="flex justify-between mb-2">
                   <span className="text-slate-300 font-medium">
                     {skill.name}
                   </span>
-
-                  <span className="text-brand font-bold">{skill.level}%</span>
+                  <span className="text-[#3b4b87] font-semibold">
+                    {skill.level}%
+                  </span>
                 </div>
-                <div className="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+
+                <div className="w-full bg-[#1b1f33]/60 rounded-full h-4 overflow-hidden">
                   <motion.div
-                    className="bg-brand h-3 rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                  />
+                    transition={{ duration: 1.8, ease: "easeOut" }}
+                    className="h-4 rounded-full bg-gradient-to-r from-[#263260] via-[#3b4b87] to-indigo-400 relative"
+                  >
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
+
       </div>
     </section>
   );

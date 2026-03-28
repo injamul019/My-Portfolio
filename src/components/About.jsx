@@ -1,125 +1,181 @@
 import { motion } from "framer-motion";
-import { University, Briefcase, GraduationCap, Award } from "lucide-react";
+import { University, GraduationCap } from "lucide-react";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const About = () => {
   const academicData = [
     {
       year: "2018",
       title: "SSC",
-      institution: "Jalalabad Cantonment Public School & College, Sylhet",
+      institution:
+        "Jalalabad Cantonment Board High School & College, Sylhet",
       result: "GPA 5.00",
-      icon: <GraduationCap className="text-brand" size={24} />,
+      icon: <GraduationCap className="text-[#3b4b87]" size={24} />,
     },
     {
       year: "2020",
       title: "HSC",
-      institution: "Jalalabad Cantonment Public School & College, Sylhet",
+      institution:
+        "Jalalabad Cantonment Public School & College, Sylhet",
       result: "GPA 5.00",
-      icon: <GraduationCap className="text-brand" size={24} />,
+      icon: <GraduationCap className="text-[#3b4b87]" size={24} />,
     },
     {
       year: "Present",
       title: "BSc in CSE",
       institution: "Metropolitan University, Sylhet",
-      result: "Currently Pursuing",
-      icon: <University className="text-brand" size={24} />,
+      result: "Currently Studying CGPA 3.96",
+      icon: <University className="text-[#3b4b87]" size={24} />,
     },
   ];
 
   return (
-    <section id="about" className="py-24 bg-bg-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-28 relative overflow-hidden">
+      {/* Animated background glow */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#3b4b87]/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#3b4b87]/20 blur-3xl rounded-full animate-pulse"></div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        {/* Section Title */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            About Me
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            About <span className="bg-gradient-to-r from-[#3b4b87] to-indigo-400 bg-clip-text text-transparent">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-brand mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#3b4b87] to-indigo-400 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          
-          {/* Left Side - About Text & Quick Info */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold text-white">
-              Bridging the gap between{" "}
-              <span className="text-brand">Academic Theory</span> and{" "}
-              <span className="text-brand">Professional Practice</span>.
-            </h3>
-            <p className="text-text-muted leading-relaxed">
-              I am currently pursuing my{" "}
-              <strong>BSc in Computer Science & Engineering</strong> at
-              Metropolitan University, Sylhet. My academic journey has provided
-              me with a strong foundation in algorithms and data structures,
-              while my passion for web development has driven me to master the
-              MERN stack.
-            </p>
-            <p className="text-text-muted leading-relaxed">
-              I specialize in building responsive, user-centric web
-              applications. Whether it's crafting complex backend APIs with
-              Node.js or creating dynamic front-end interfaces with React, I
-              focus on writing clean, maintainable, and efficient code.
-            </p>
+            <motion.h3
+              variants={fadeUp}
+              className="text-2xl font-semibold text-white leading-snug"
+            >
+              Connecting{" "}
+              <span className="text-[#3b4b87]">Academic Knowledge</span> and{" "}
+              <span className="text-[#3b4b87]">Real-world Practice</span>.
+            </motion.h3>
+
+            <motion.p
+              variants={fadeUp}
+              className="text-slate-300 leading-relaxed"
+            >
+              Currently pursuing my{" "}
+              <strong className="text-white">
+                BSc in Computer Science & Engineering
+              </strong>{" "}
+              at{" "}
+              <strong className="text-white">
+                Metropolitan University
+              </strong>
+              , with a solid foundation in Algorithms, Data Structures,
+              and Competitive Programming.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              className="text-slate-300 leading-relaxed"
+            >
+              I enjoy writing clean, efficient code and sharing knowledge
+              through teaching. I’m also passionate about sports,
+              especially badminton, which keeps me active and focused.
+            </motion.p>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 bg-bg-card rounded-lg border border-border">
-                <p className="text-3xl font-bold text-brand">2+</p>
-                <p className="text-sm text-text-muted">Years Experience</p>
-              </div>
-              <div className="p-4 bg-bg-card rounded-lg border border-border">
-                <p className="text-3xl font-bold text-brand">20+</p>
-                <p className="text-sm text-text-muted">Projects Completed</p>
-              </div>
-            </div>
+            <motion.div
+              variants={containerVariants}
+              className="grid grid-cols-2 gap-6 pt-6"
+            >
+              <motion.div
+                variants={fadeUp}
+                whileHover={{ y: -8 }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="p-6 bg-[#1b1f33]/60 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl"
+              >
+                <p className="text-3xl font-bold text-[#3b4b87]">3+</p>
+                <p className="text-sm text-slate-400">
+                  Years Teaching Experience
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                whileHover={{ y: -8 }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                className="p-6 bg-[#1b1f33]/60 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl"
+              >
+                <p className="text-3xl font-bold text-[#3b4b87]">3</p>
+                <p className="text-sm text-slate-400">
+                  Projects Completed
+                </p>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
-          {/* Right Side - Academic Timeline */}
+          {/* Academic Info */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-6"
           >
             <h3 className="text-xl font-semibold text-white mb-4">
-              Academic Journey
+              Academic Information
             </h3>
+
             {academicData.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 p-4 bg-bg-card border border-border rounded-xl hover:border-brand transition-colors"
+                variants={fadeUp}
+                whileHover={{ y: -5 }}
+                className="flex items-start gap-4 p-6 bg-[#1b1f33]/60 border-l-4 border-[#3b4b87] border border-slate-700 rounded-2xl shadow-lg transition-all"
               >
-                <div className="flex-shrink-0 p-3 bg-brand/10 rounded-lg">
+                <div className="p-3 bg-[#3b4b87]/10 rounded-lg">
                   {item.icon}
                 </div>
-                <div className="flex-1">
+                <div>
                   <div className="flex items-center gap-3 mb-1">
-                    <span className="text-brand font-bold text-sm">
+                    <span className="text-[#3b4b87] font-bold text-sm">
                       {item.year}
                     </span>
                     <span className="text-white font-semibold">
                       {item.title}
                     </span>
                   </div>
-                  <p className="text-text-muted text-sm mb-1">
+                  <p className="text-slate-400 text-sm">
                     {item.institution}
                   </p>
-                  <p className="text-text-muted text-xs">{item.result}</p>
+                  <p className="text-slate-500 text-xs">
+                    {item.result}
+                  </p>
                 </div>
               </motion.div>
             ))}
